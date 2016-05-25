@@ -55,7 +55,7 @@ function checkAuth($doRedirect) {
 
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <title>Jedi Temple</title>
+    <title>irlibrary</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   </head>
 
@@ -69,7 +69,7 @@ function checkAuth($doRedirect) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Jedi Temple</a>
+      <a class="navbar-brand" href="index.php">irlibrary</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,8 +86,6 @@ function checkAuth($doRedirect) {
             <li><a href="add_article.php">Submit Article</a></li>
           </ul>
         </li>
-        <li class=""><a href="rss_feed.php">RSS Feed<span class="sr-only">(current)</span></a></li>
-        <li><a href="top_contributors.php">Top Contributors</a></li>
       </ul>
       <?php if (checkAuth(false) == "") {
       echo "<ul class='nav navbar-nav navbar-right'>
