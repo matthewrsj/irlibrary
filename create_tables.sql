@@ -5,16 +5,6 @@ CREATE TABLE pub_type (
   UNIQUE KEY (type_name)
 )ENGINE=InnoDB;
 
-CREATE TABLE publication (
-  id INT NOT NULL AUTO_INCREMENT,
-  pub_name VARCHAR(255) NOT NULL,
-  author VARCHAR(255),
-  year_published INT,
-  pub_type INT,
-  PRIMARY KEY (id),
-  FOREIGN KEY (pub_type) REFERENCES pub_type(id)
-)ENGINE=InnoDB;
-
 CREATE TABLE genre (
   id INT NOT NULL AUTO_INCREMENT,
   genre_name VARCHAR(255) NOT NULL,
@@ -22,18 +12,25 @@ CREATE TABLE genre (
   UNIQUE KEY (genre_name)
 )Engine=InnoDB;
 
+CREATE TABLE publication (
+  id INT NOT NULL AUTO_INCREMENT,
+  pub_name VARCHAR(255) NOT NULL,
+  author VARCHAR(255),
+  year_published INT,
+  pub_type INT,
+  pub_genre INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (pub_type) REFERENCES pub_type(id),
+  FOREIGN KEY (pub_genre) REFERENCES genre(id)
+)ENGINE=InnoDB;
+
 CREATE TABLE award (
   id INT NOT NULL AUTO_INCREMENT,
   award_name VARCHAR(255) NOT NULL,
+  award_genre INT,
   PRIMARY KEY (id),
-  UNIQUE KEY (award_name)
-)ENGINE=InnoDB;
-
-CREATE TABLE pub_genre (
-  pid INT,
-  gid INT,
-  FOREIGN KEY (pid) REFERENCES publication(id),
-  FOREIGN KEY (gid) REFERENCES genre(id)
+  UNIQUE KEY (award_name),
+  FOREIGN KEY (award_genre) REFERENCES genre(id)
 )ENGINE=InnoDB;
 
 CREATE TABLE pub_award (
@@ -43,9 +40,3 @@ CREATE TABLE pub_award (
   FOREIGN KEY (aid) REFERENCES award(id)
 )ENGINE=InnoDB;
 
-CREATE TABLE award_genre (
-  aid INT,
-  gid INT,
-  FOREIGN KEY (aid) REFERENCES award(id),
-  FOREIGN KEY (gid) REFERENCES genre(id)
-)Engine=InnoDB

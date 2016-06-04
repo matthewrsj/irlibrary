@@ -36,7 +36,9 @@
         <li class=""><a href="add_publication.php">Add Publication <span class="sr-only">(current)</span></a></li>
         <li class=""><a href="add_genre.php">Add Genre <span class="sr-only">(current)</span></a></li>
         <li class=""><a href="add_award.php">Add Award <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="add_pub_type.php">Add Publication Type <span class="sr-only">(current)</span></a></li>
         <li class=""><a href="del_publication.php">Delete Publication <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="search.php">Search For Publication<span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class='nav navbar-nav navbar-right'>
       </ul>

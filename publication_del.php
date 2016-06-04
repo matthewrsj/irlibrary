@@ -2,6 +2,13 @@
 <?php
 	// prepare and bind
 	$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+  $query = "DELETE FROM pub_award WHERE pid=(
+    SELECT id FROM publication WHERE pub_name='" . $_POST['pub_name'] . "' LIMIT 1)";
+  if ($conn->query($query) === FALSE) {
+    echo "Error: " . $query . "<br>" . $conn->error;
+  }
+
+	$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 	$query = "DELETE FROM publication WHERE pub_name='" . $_POST['pub_name'] . "'";
 	if ($conn->query($query) === TRUE) {

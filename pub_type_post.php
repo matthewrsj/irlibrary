@@ -3,7 +3,8 @@
 	// prepare and bind
 	$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
-	$query = "INSERT INTO award (award_name, award_genre) VALUES ('" . $_POST['award_name'] . "', ".$_POST['genre_id'].")";
+	$query = "INSERT INTO pub_type (type_name) VALUES
+	('" . $_POST['type_name'] . "')";
 	if ($conn->query($query) === TRUE) {
 	header('Location: http://web.engr.oregonstate.edu/~johnsma8/irlibrary');
 	die();
